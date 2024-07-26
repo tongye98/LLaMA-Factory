@@ -1,4 +1,45 @@
 {
+  "Magicoder-OSS-Instruct-75K": {
+    "file_name": "/home/tongye/code_data/synthetic-datasets/Magicoder-OSS-Instruct-75K/data-oss_instruct-decontaminated.jsonl",
+    "columns":{
+      "prompt": "problem",
+      "query": "", 
+      "response": "solution"
+    }
+  },
+  "Magicoder-Evol-Instruct-110K": {
+    "file_name": "/home/tongye/code_data/synthetic-datasets/Magicoder-Evol-Instruct-110K/data-evol_instruct-decontaminated.jsonl",
+    "columns":{
+      "prompt": "instruction",
+      "query": "", 
+      "response": "response"
+    }
+  },
+  "Magicoder-All": {
+    "file_name": "/home/tongye/code_data/synthetic-datasets/Magicoder-All.jsonl",
+    "columns":{
+      "prompt": "problem",
+      "query": "", 
+      "response": "solution"
+    }
+  },
+  "Magicoder-OSS-Instruct-75K-Filter10": {
+    "file_name": "/home/tongye/code_data/synthetic-datasets/Magicoder-OSS-Instruct-75K/filted10.jsonl",
+    "columns":{
+      "prompt": "problem",
+      "query": "", 
+      "response": "solution"
+    }
+  },
+  "Code-Feedback-66K": {
+    "file_name": "/home/tongye/code_data/synthetic-datasets/OpencodeInterpreter-Code-Feedback-66k/Code-Feedback-alpaca.jsonl",
+    "columns":{
+      "prompt": "instruction",
+      "query": "", 
+      "response": "response",
+      "history": "history"
+    }
+  },
   "identity": {
     "file_name": "identity.json"
   },

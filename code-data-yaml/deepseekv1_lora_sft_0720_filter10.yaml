@@ -1,0 +1,40 @@
+### model
+model_name_or_path: /largespace/tydata/models-hf/deepseek-coder-6.7b-base
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+# accelerator_config: examples/accelerate/fsdp_config.yaml
+### dataset
+dataset: Magicoder-OSS-Instruct-75K-Filter10
+template: deepseekcoder
+cutoff_len: 2048
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+output_dir: /largespace/tydata/code_data_results/finetuned_models/DeepSeekCoder-v1-6.7B/lora/sft/0720/checkpoint-146-filter10-2
+logging_steps: 10
+plot_loss: true
+overwrite_output_dir: true
+report_to: tensorboard
+logging_dir: /largespace/tydata/code_data_results/finetuned_models/DeepSeekCoder-v1-6.7B/lora/sft/0720/checkpoint-146-filter10-2/logs/
+print_param_status: true
+save_strategy: epoch
+
+### train
+per_device_train_batch_size: 16
+gradient_accumulation_steps: 8
+learning_rate: 5.0e-5
+num_train_epochs: 2.0
+lr_scheduler_type: linear
+warmup_steps: 0
+fp16: false
+ddp_timeout: 180000000
+resume_from_checkpoint: /largespace/tydata/code_data_results/finetuned_models/DeepSeekCoder-v1-6.7B/lora/sft/0720/checkpoint-146
+
+### eval
+val_size: 0
+per_device_eval_batch_size: 1
+eval_strategy: "no"

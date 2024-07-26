@@ -629,6 +629,14 @@ _register_template(
     efficient_eos=True,
 )
 
+_register_template(
+    name="deepseekcoder-our",
+    format_user=StringFormatter(slots=["### Instruction:\n{{content}}\n### Response:"]),
+    format_assistant=StringFormatter(slots=["\n", "{{content}}"]),
+    format_separator=EmptyFormatter(slots=["\n<|EOT|>\n"]),
+    stop_words=["<|EOT|>"],
+    efficient_eos=True,
+)
 
 _register_template(
     name="default",

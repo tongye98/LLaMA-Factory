@@ -1,0 +1,42 @@
+### model
+model_name_or_path: /largespace/tydata/models-hf/DeepSeek-Coder-V2-Lite-Base
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+deepspeed: examples/deepspeed/ds_z2_config.json
+
+### dataset
+dataset: Magicoder-OSS-Instruct-75K
+template: deepseekcoder
+cutoff_len: 1024
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+output_dir: saves/DeepSeek-Coder-V2-Lite-Base/full/sft/0715/
+logging_steps: 10
+plot_loss: true
+overwrite_output_dir: true
+report_to: tensorboard
+logging_dir: saves/DeepSeek-Coder-V2-Lite-Base/full/sft/0715/logs/
+print_param_status: true
+save_strategy: epoch
+
+
+### train
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 8
+learning_rate: 1.0e-4
+num_train_epochs: 3.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+fp16: false
+ddp_timeout: 180000000
+
+### eval
+val_size: 0
+per_device_eval_batch_size: 1
+eval_strategy: steps
+eval_steps: 2000

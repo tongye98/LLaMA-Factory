@@ -1,0 +1,13 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+model_name_or_path: /largespace/tydata/models-hf/deepseek-coder-6.7b-base
+adapter_name_or_path: /largespace/tydata/code_data_results/finetuned_models/DeepSeekCoder-v1-6.7B/lora/sft/0720/checkpoint-146-filter10-2/checkpoint-264
+template: deepseekcoder
+finetuning_type: lora
+
+### export
+export_dir: /largespace/tydata/code_data_results/finetuned_models/DeepSeekCoder-v1-6.7B/lora/sft/0720/checkpoint-146-filter10-2/checkpoint-264/epoch2
+export_size: 4
+export_device: cpu
+export_legacy_format: false
